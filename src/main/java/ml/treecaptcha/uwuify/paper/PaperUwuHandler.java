@@ -2,6 +2,7 @@ package ml.treecaptcha.uwuify.paper;
 
 import io.github.ran.uwu.client.Uwuifier;
 import io.papermc.paper.event.player.AsyncChatDecorateEvent;
+import io.papermc.paper.event.player.PlayerNameEntityEvent;
 import ml.treecaptcha.uwuify.core.Configuration;
 import ml.treecaptcha.uwuify.spigot.Uwuify;
 import net.kyori.adventure.text.Component;
@@ -50,5 +51,12 @@ public class PaperUwuHandler implements Listener {
             meta.title(Component.text(Uwuifier.uwuify(serializer.serialize(meta.title()))));
         }
         e.setNewBookMeta(meta);
+    }
+
+    @EventHandler
+    public void onAnimalName(PlayerNameEntityEvent e) {
+        if(!Uwuify.ANIMALS_UWUIFY) return;
+        PlainTextComponentSerializer serializer = PlainTextComponentSerializer.plainText();
+        e.setName(Component.text(Uwuifier.uwuify(serializer.serialize(e.getName()))));
     }
 }

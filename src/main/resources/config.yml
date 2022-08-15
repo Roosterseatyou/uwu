@@ -29,3 +29,6 @@ use-chat-preview: true
 # these settings below affect gameplay, so they will stay off by default until there is a solution to make the uwufication client side only
 signs-uwuify: false
 books-uwuify: false
+
+# below are the Paper specific settings
+animals-uwuify: false

@@ -14,6 +14,7 @@ public final class Uwuify extends JavaPlugin {
      */
     public static boolean SIGNS_UWUIFY;
     public static boolean BOOKS_UWUIFY;
+    public static boolean ANIMALS_UWUIFY;
 
     @Override
     public void onEnable() {
@@ -42,6 +43,10 @@ public final class Uwuify extends JavaPlugin {
         }
         SIGNS_UWUIFY = uwu.getConfig().getBoolean("signs-uwuify");
         BOOKS_UWUIFY = uwu.getConfig().getBoolean("books-uwuify");
+
+        //Paper specific
+        ANIMALS_UWUIFY = uwu.getConfig().getBoolean("animals-uwuify");
+
     }
 
     public static void checkPaper() {
@@ -49,6 +54,7 @@ public final class Uwuify extends JavaPlugin {
             Class.forName("io.papermc.paper.event.entity.WardenAngerChangeEvent");
         } catch (ClassNotFoundException e) {
             uwu.getLogger().log(Level.WARNING, Uwuifier.uwuify("You are not using Paper! We highly recommend you do so!"));
+            uwu.getLogger().log(Level.WARNING, Uwuifier.uwuify("You are missing out on some cool features! Go to https://papermc.io/ to get Paper!"));
             loadSpigot();
             return;
         }
