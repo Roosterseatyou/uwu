@@ -63,7 +63,7 @@ public final class Uwuify extends JavaPlugin {
 
     private static void loadSpigot() {
         uwu.getLogger().log(Level.INFO, Uwuifier.uwuify("Loading Spigot version of uwuify!"));
-        new uwuHandler(uwu);
+        new SpigotUwuHandler(uwu);
     }
 
     public static void loadPaper() {
